@@ -23,5 +23,13 @@ public class Passenger {
     public boolean getinCar(){
         return inCar;
     }
+
+    public void nowinCar(){
+        inCar = true;
+    }
+
+    public void notinCar(){
+        inCar = false;
+    }
     
 }
