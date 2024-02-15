@@ -8,6 +8,8 @@ public class Car {
     private static int IDgen;
     private int IDnum;
     private double balance; 
+    private boolean Movingleft;
+    private boolean Movingright;
 
     //Constructor
     public Car(int myPos, int myGoal){
@@ -17,6 +19,13 @@ public class Car {
         IDnum = IDgen;
         IDgen++;
         balance = 0.0;
+        if(goal < pos){
+            Movingleft = true;
+            Movingright = false;
+        }else{
+            Movingleft = false;
+            Movingright = true;
+        }
     }
 
     //Methods
@@ -40,6 +49,11 @@ public class Car {
         return goal;
     }
 
+    public boolean getDirectionality(){
+        return Movingleft;
+    }
+
+
     public int getPosC(){
         return pos;
     }
@@ -49,7 +63,7 @@ public class Car {
     }
 //MUTATORS
 
-public void addPassanger(Passenger x){
+public void addPassenger(Passenger x){
     people.add(x);
 }
 
