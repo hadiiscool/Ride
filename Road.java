@@ -12,7 +12,7 @@ public Road(int myNumstations){
 }
 //Methods (take all stations and update them so that all cars move once and stations updates and prints things!)
 
-public void update(){
+public void updateCars(){
 
     for(int i = 0; i < road.size(); i++){
         road.get(i).updateCars();
@@ -28,6 +28,4 @@ public void update(){
         }
         road.get(i).updateCars();
     }
-}
-
 }
