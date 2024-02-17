@@ -77,12 +77,14 @@ public void loadPassengers(){
                     if(waiting.get(i).getGoalP() < cars.get(j).getGoalC()){
                         cars.get(j).addPassenger(waiting.get(i));
                         cars.get(j).getpassangerlist().add(waiting.remove(i));
+                        j--;
                     }
 
                 } else if( cars.get(j).getDirectionality() == true){
                         if(waiting.get(i).getGoalP() > cars.get(j).getGoalC()){
                             cars.get(j).addPassenger(waiting.get(i));
                             cars.get(j).getpassangerlist().add(waiting.remove(i));
+                            j--;
                         }
                 }
 
@@ -110,13 +112,17 @@ public void updateCars(){
 public String printPassengers(){
     String blank = "";
     for(int k = 0; k < waiting.size(); k++){
-        blank += waiting.get(k).toString();
         if(waiting.get(k).getGoalP() == StationNum){
             waiting.get(k).AtGoal();
         }
+    blank += waiting.get(k).toString();
 }
 return blank;
 
+}
+
+public int getNumber(){
+    return StationNum;
 }
 
 public String printCars(){
@@ -128,7 +134,7 @@ return blank;
 }
 
 public String toString(){
-    return "Station Num: " + StationNum +  " Passengers Waiting: " + printPassengers() + "Cars at Station: " + printCars();
+    return "Station Num: " + StationNum +  "\nPassengers Waiting[" + printPassengers() + "]\nCars at Station[" + printCars() + "]\n";
 }
 
 }

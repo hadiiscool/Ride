@@ -53,6 +53,16 @@ public class Car {
         return Movingleft;
     }
 
+    public String printDirectionality(){
+        String blank = "";
+        if(Movingleft){
+            blank += "Left";
+        }else{
+            blank += "right";
+        }
+    return blank;
+    }
+
 
     public int getPosC(){
         return pos;
@@ -68,7 +78,13 @@ public void addPassenger(Passenger x){
 }
 
 public void changePos(){
+    if(getDirectionality()){
+    pos--;
+    }
+    else{
     pos++;
+    }
+    
     int num = 0;
     for(Passenger x : people){
         num++;
@@ -85,6 +101,6 @@ public String toString(){
         count++;
     }
 
-    return "Car ID:" + IDnum + "The number of passengers" + count + "Station: " + pos; 
+    return "Car ID: " + IDnum + " The number of passengers " + count + " Station: " + pos + " Moving " + printDirectionality() +  ", "; 
 }
 }

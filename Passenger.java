@@ -47,6 +47,6 @@ public class Passenger {
     }
 
     public String toString(){
-        return "Passenger: " + IDnum + "Passenger Goal: " + goal + "Are they at their goal? " + AtGoal;
+        return "Passenger: " + IDnum + " Passenger Goal: " + goal + " Are they at their goal? " + AtGoal +", ";
     }
 }
