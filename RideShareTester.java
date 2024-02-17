@@ -5,6 +5,7 @@ public class RideShareTester {
     System.out.println();
     System.out.println("CHANGING");
     System.out.println();
+    System.out.println();
     tester.temp();
     System.out.println(tester.toString());
     }

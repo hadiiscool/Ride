@@ -70,27 +70,27 @@ public void emptyPassengers(){
 
 
 public void loadPassengers(){
+    if(cars.size() > 0){
     for(int i = 0; i < waiting.size(); i++){
         for(int j = 0; j < cars.size(); j++){
             if(cars.get(j).getPassNum() < 3){
                 if(cars.get(j).getDirectionality() == false){
-                    if(waiting.get(i).getGoalP() < cars.get(j).getGoalC()){
-                        cars.get(j).addPassenger(waiting.get(i));
-                        cars.get(j).getpassangerlist().add(waiting.remove(i));
-                        j--;
+                    if(waiting.get(i).getGoalP() > cars.get(j).getPosC()){
+                        cars.get(j).addPassenger(waiting.remove(i));
+                        i--;
                     }
 
                 } else if( cars.get(j).getDirectionality() == true){
-                        if(waiting.get(i).getGoalP() > cars.get(j).getGoalC()){
-                            cars.get(j).addPassenger(waiting.get(i));
-                            cars.get(j).getpassangerlist().add(waiting.remove(i));
-                            j--;
+                        if(waiting.get(i).getGoalP() < cars.get(j).getPosC()){
+                            cars.get(j).addPassenger(waiting.remove(i));
+                            i--;
                         }
                 }
 
     
             }
         }
+    }
     }
 }
 

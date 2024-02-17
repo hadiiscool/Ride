@@ -84,7 +84,7 @@ public void changePos(){
     else{
     pos++;
     }
-    
+
     int num = 0;
     for(Passenger x : people){
         num++;
@@ -96,11 +96,11 @@ public void changePos(){
 
 
 public String toString(){
-    int count = 0; 
+    String blank = "";
     for(Passenger x : people){
-        count++;
+        blank += x.getIDnum() + ", ";
     }
 
-    return "Car ID: " + IDnum + " The number of passengers " + count + " Station: " + pos + " Moving " + printDirectionality() +  ", "; 
+    return "Car ID: " + IDnum + " passengers IDs( " + blank + ") Station: " + pos + " Moving " + printDirectionality() +  " goal " + goal + ", "; 
 }
 }

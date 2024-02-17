@@ -25,15 +25,15 @@ public Road(int myNumstations,int myNumpassengers, int myNumcars){
 
 
 public void temp(){
-for(int i = 0; i < road.size(); i++){
-    road.get(i).updateCars();
+
+for(int k = 0; k < road.size(); k++){
+    road.get(k).updateCars();
 }
 }
 
 public void updateCars(){
 
     for(int i = 0; i < road.size(); i++){
-        road.get(i).updateCars();
 
 
         for(int j = 0; j < road.get(i).getCars().size(); j++){
