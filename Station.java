@@ -78,12 +78,14 @@ public void loadPassengers(){
                     if(waiting.get(i).getGoalP() > cars.get(j).getPosC()){
                         cars.get(j).addPassenger(waiting.remove(i));
                         i--;
+                        break;
                     }
 
                 } else if( cars.get(j).getDirectionality() == true){
                         if(waiting.get(i).getGoalP() < cars.get(j).getPosC()){
                             cars.get(j).addPassenger(waiting.remove(i));
                             i--;
+                            break;
                         }
                 }
 
@@ -93,6 +95,11 @@ public void loadPassengers(){
     }
     }
 }
+
+
+
+
+
 
 public void addCars(Car x){
     cars.add(x);
